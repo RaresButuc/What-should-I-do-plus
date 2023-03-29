@@ -28,6 +28,7 @@ function App() {
       ) : (
         " "
       )}
+      <br></br>
       <button onClick={seter}>Show todo's!</button>
     </div>
   );

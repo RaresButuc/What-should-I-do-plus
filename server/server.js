@@ -29,7 +29,6 @@ app.get("/api/todo", async (req, res) => {
   return res.json(todos);
 });
 app.post("/api/todo", (req, res) => {
-  console.log(req.body);
   const title = req.body.title;
   const comment = req.body.comment;
   const createdAt = Date.now();
@@ -42,6 +41,16 @@ app.post("/api/todo", (req, res) => {
     .save()
     .then((todo) => res.json(todo))
     .catch((err) => res.status(400).json({ success: false }));
+});
+
+app.get("/api/todo/:id", async(req, res) => {
+  const element = await ToDo.findById(req.params.id)
+  return res.json(element)
+});
+
+app.delete("/api/todo/:id", async (req, res) => {
+  const deleted = await ToDo.findByIdAndDelete(req.params.id);
+  return res.json(deleted)
 });
 
 app.listen(5000, () => console.log("Server started on port 5000"));

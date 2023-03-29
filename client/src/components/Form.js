@@ -1,20 +1,3 @@
-// import React from "react";
-
-// function Form({ submitCommand,titleChange,commentChange }) {
-
-//   return (
-//     <form name="myForm" onSubmit={submitCommand} method="post">
-//       Title:
-//       <input type="text" name="title" onChange = {titleChange}></input><br></br> <br></br>
-//       Comment:
-//       <input type="text" name="comment" onChange = {commentChange}></input><br></br><br></br>
-//       <input type="submit" value="Submit"></input>
-//     </form>
-//   );
-// }
-
-// export default Form;
-
 import React from "react";
 import { useState } from "react";
 
